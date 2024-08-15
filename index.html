@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supercars Collection</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylelist" href="bootstrap-5.3.3-dist/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: black;
+            position: relative;
+        }
+
+        /* Video Background */
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        /* Dim Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        header {
+            width: 100%;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+            border-bottom: 0.8px solid rgba(255, 255, 255, 0.2);
+        }
+
+        header img {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            object-fit: contain;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            text-transform: uppercase;
+            color: #ffd700;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            margin-top: 80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.6s ease, box-shadow 0.6s ease, border 0.6s ease;
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border: 2px solid #ffd700;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .card:hover img {
+            transform: translateY(-100%);
+        }
+
+        .card-body {
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.7);
+            transition: background-color 0.6s ease;
+        }
+
+        .card-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            opacity: 1;
+        }
+
+        .card-text {
+            font-size: 1em;
+            color: #666;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .card:hover .card-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .card img {
+                height: 150px;
+            }
+            .card-body {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <video class="video-bg" autoplay muted loop>
+        <source src="992 GT3RS Seattles First [4K] (online-video-cutter.com) (1).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Dim Overlay -->
+    <div class="overlay"></div>
+
+    <header>
+        <div style="display: flex; align-items: center;">
+            <img src="logo_00-removebg-preview.jpg" alt="Website Logo">
+            <h1>Supercars Collection</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="https://www.porsche.com/middle-east/_india_/models/911/carrera-models/911-carrera/" class="card" target="_blank">
+            <img src="porshe 911.jpg" alt="Porsche 911">
+            <div class="card-body">
+                <h3 class="card-title">Porsche 911</h3>
+                <p class="card-text">The Porsche 911 is an iconic sports car known for its rear-engine layout, sleek design, and powerful flat-six engine. It combines luxury with high performance, offering thrilling acceleration and precise handling.</p>
+            </div>
+        </a>
+        <a href="https://www.astonmartin.com/en/our-world/news/2024/2/12/state-of-the-art-aston-martin-vantage-gt3-spearheads-new-era-in-top-flight-gt-racing" class="card" target="_blank">
+            <img src="Aston Martin Vantage GT3.jpg" alt="Aston Martin Vantage GT3">
+            <div class="card-body">
+                <h3 class="card-title">Aston Martin Vantage GT3</h3>
+                <p class="card-text">Embrace the Aston Martin Vantage GT3—a dynamic fusion of racing heritage, raw power, and refined design. Built for the track yet stunning on the road, the Vantage GT3 offers an unmatched driving experience where performance meets elegance, capturing the essence of true motorsport passion.</p>
+            </div>
+        </a>
+        <a href="https://www.lamborghini.com/en-en/news/lambo-v12-vision-gran-turismo-you-can-drive-it-too" class="card" target="_blank">
+            <img src="lamborghini v12 vision.jpg" alt="Lamborghini V12 Vision">
+            <div class="card-body">
+                <h3 class="card-title">Lamborghini V12 Vision</h3>
+                <p class="card-text">Experience the future of driving with the Lamborghini V12 Vision—a fusion of bold design, V12 power, and unmatched innovation. Where speed meets luxury, this is the ultimate statement in automotive excellence.</p>
+            </div>
+        </a>
+        <a href="https://www.pagani.com/huayra/" class="card" target="_blank">
+            <img src="Pagani Huayra.jpg" alt="Pagani Huayra">
+            <div class="card-body">
+                <h3 class="card-title">Pagani Huayra</h3>
+                <p class="card-text">Step into the world of the Pagani Huayra—a harmonious blend of artistic craftsmanship, relentless power, and innovative engineering. With its twin-turbo V12 and exquisite design, the Huayra isn’t just a car; it’s a symphony of speed and elegance, crafted for those who appreciate the finer things in motion.</p>
+            </div>
+        </a>
+        <a href="https://cars.mclaren.com/en/legacy/mclaren-p1" class="card" target="_blank">
+            <img src="Mc Laren p1.jpg" alt="McLaren P1">
+            <div class="card-body">
+                <h3 class="card-title">McLaren P1</h3>
+                <p class="card-text">Discover the McLaren P1—an engineering marvel that blends extraordinary performance with groundbreaking hybrid technology. Designed for the true connoisseur, the P1 delivers an unrivaled driving experience, merging blistering speed with eco-conscious innovation.</p>
+            </div>
+        </a>
+        <a href="https://www.ferrari.com/en-EN/auto/ferrari-portofino-m" class="card" target="_blank">
+            <img src="Ferrari Portofino M.jpg" alt="Ferrari Portofino M">
+            <div class="card-body">
+                <h3 class="card-title">Ferrari Portofino M</h3>
+                <p class="card-text">The Ferrari Portofino M is a stunning convertible sports car featuring a turbocharged V8 engine and a sleek, aerodynamic design. It offers a blend of luxury and performance, delivering exhilarating speed and precise handling in a stylish, open-top package.</p>
+            </div>
+        </a>
+        <a href="https://www.koenigsegg.com/model/jesko-absolut" class="card" target="_blank">
+            <img src="Koenigsegg Jesko.jpg" alt="Koenigsegg Jesko">
+            <div class="card-body">
+                <h3 class="card-title">Koenigsegg Jesko</h3>
+                <p class="card-text">Experience the pinnacle of performance with the Koenigsegg Jesko—a masterpiece of engineering, blending extreme speed with cutting-edge innovation. Powered by a roaring V8 and designed for ultimate precision, the Jesko is more than a hypercar; it’s a revolution in motion, redefining what’s possible on the road.</p>
+            </div>
+        </a>
+        <a href="https://www.bugatti.com/the-bugatti-models/coachbuilding/divo/" class="card" target="_blank">
+            <img src="bugatti divo.jpg" alt="Bugatti Divo">
+            <div class="card-body">
+                <h3 class="card-title">Bugatti Divo</h3>
+                <p class="card-text">The Bugatti Divo is a hypercar that epitomizes extreme performance and luxury. With its quad-turbocharged W16 engine and aerodynamic design, it offers unparalleled speed and agility. The Divo’s bespoke design and advanced technology make it a rare blend of elegance and high-octane performance.</p>
+            </div>
+        </a>
+        <a href="https://www.audiusa.com/us/web/en/models/r8/r8-heritage/2024/overview.html" class="card" target="_blank">
+            <img src="audi-r8.jpg" alt="Audi R8 Coupe">
+            <div class="card-body">
+                <h3 class="card-title">Audi R8 Coupe</h3>
+                <p class="card-text">Unleash the Audi R8 Coupe—a perfect balance of precision engineering, striking design, and exhilarating performance. With its naturally aspirated V10 engine and unmistakable style, the R8 Coupe delivers a driving experience where power meets sophistication, embodying the spirit of the ultimate sports car.</p>
+            </div>
+        </a>
+    </div>
+
+</body>
+</html>
